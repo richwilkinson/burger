@@ -1,4 +1,4 @@
-USE burgers_db;
+USE burger_db;
 
 INSERT INTO burgers (burger_name, devoured)
 VALUES ("The Real Deal Holyfield", 0)

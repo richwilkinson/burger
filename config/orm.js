@@ -88,7 +88,7 @@ var orm = {
       cb(result);
     });
   },
-  /*delete: function(table, condition, cb) {
+  delete: function(table, condition, cb) {
     var queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
     queryString += condition;
@@ -100,7 +100,7 @@ var orm = {
 
       cb(result);
     });
-  }*/
+  }
 };
 
 // Export the orm object for the model (cat.js).

@@ -20,21 +20,25 @@ router.post("/", function(req, res) {
   burger.create([
     "burger_name", "devoured"
   ], [
-    req.body.burgerName, 0
-  ], function() {
-    res.redirect("/");
+    req.body.burger_name, 0
+  ], function(result) {
+    res.json({ id: result.insertId});
   });
 });
 
-router.put("/:id", function(req, res) {
+router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
   burger.update({
     devoured: req.body.devour
-  }, condition, function() {
-    res.redirect("/");
+  }, condition, function(result) {
+    if (result.changedRows == 0) {
+        return res.status(404).end();
+  } else { 
+      res.status(200).end();
+  }
   });
 });
 
