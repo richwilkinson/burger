@@ -23,7 +23,7 @@ router.post("/api/burgers:id", function(req, res) {
   ], [
     req.body.burger_name, 0
   ], function(result) {
-    res.render({ id: result.insertId});
+    res.redirect({ id: result.insertId});
   });
 });
 
