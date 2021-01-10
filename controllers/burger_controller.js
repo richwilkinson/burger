@@ -22,7 +22,7 @@ router.post("/", function(req, res) {
   ], [
     req.body.burger_name, 0
   ], function(result) {
-    res.json({ id: result.insertId});
+    res.render({ id: result.insertId});
   });
 });
 
