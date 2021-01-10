@@ -16,7 +16,8 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/", function(req, res) {
+router.post("/api/burgers:id", function(req, res) {
+  console.log("YOU POSTED A BURGER: ", req.body)
   burger.create([
     "burger_name", "devoured"
   ], [
