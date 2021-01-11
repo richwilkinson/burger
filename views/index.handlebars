@@ -1,3 +1,4 @@
+<div class="container-sm">
 <h1>Mondo Burgers !</h1>
 
 <h2>Create a Burger</h2>
@@ -29,12 +30,13 @@
 <ul>
   {{#each burgers}}
     {{#if devoured}}
-      <li>
+      <li>{{burger_name}}
           <button class="devoured" data-devoured="{{devoured}}" data-id=""{{id}}>
-              That was Mondo, yes?
+              You have devoured this!
           </button>
       </li>
     {{/if}}
   {{/each}}
 </ul>
+</div>
 

@@ -26,7 +26,7 @@ $(doument).ready(function () {
         event.preventDefault();
 
         var mondoBurger = {
-            burger_name: $("#nom").val(),
+            burger_name: $("#mondo").val(),
             devoured: $("[name=devoured]:checked").val()
         };
 
