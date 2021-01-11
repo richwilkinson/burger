@@ -1,4 +1,4 @@
-$(doument).ready(function () {
+$(document).ready(function () {
     $(".devoured").on("click", function (event) {
         var id = $(this).data("id");
         if ($(this).data("devoured") === 0){
@@ -24,6 +24,13 @@ $(doument).ready(function () {
 
     $(".create-form").on("submit", function (event) {
         event.preventDefault();
+        var id = $(this).data("id");
+        if ($(this).data("devoured") === 0){
+           var devoured = true
+        }else devoured = false
+     
+        console.log(devoured);
+        console.log(id);
 
         var mondoBurger = {
             burger_name: $("#mondo").val(),
