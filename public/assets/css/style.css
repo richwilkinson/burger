@@ -16,6 +16,6 @@ body{
        #bfdece 52%, transparent 52%
     );
 }
-.card{
-    background-color: transparent 50%;
+.special-card{
+    background-color: rgba(245, 245, 245, 0.8)
 }

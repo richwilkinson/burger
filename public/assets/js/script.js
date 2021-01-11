@@ -1,27 +1,4 @@
 $(document).ready(function () {
-    $(".devoured").on("click", function (event) {
-        var id = $(this).data("id");
-        if ($(this).data("devoured") === 0){
-           var devoured = true
-        }else devoured = false
-     
-        console.log(devoured);
-        console.log(id);
-        var userDevoured = {
-            devoured: devoured
-        };
-
-        $.ajax("/api/burgers/" + id, {
-            type: "PUT",
-            data: userDevoured
-        }).then(
-            function () {
-                console.log("changed devoured status to ", devoured);
-                location.reload();
-            }
-        );
-    });
-
     $(".create-form").on("submit", function (event) {
         event.preventDefault();
         var id = $(this).data("id");
@@ -31,12 +8,11 @@ $(document).ready(function () {
      
         console.log(devoured);
         console.log(id);
-
+    
         var mondoBurger = {
             burger_name: $("#mondo").val(),
-            devoured: $("[name=devoured]:checked").val()
-        };
-
+            devoured: 0
+        };    
         // Send the POST request.
         $.ajax("/api/burgers" + id, {
             type: "POST",
@@ -49,5 +25,23 @@ $(document).ready(function () {
             }
         );
     });
+    $(".devoured").on("click", function (event) {
+        var id = $(this).data("id");
+        console.log(id);
+        var userDevoured = {
+            devoured: 1
+        };
+        $.ajax("/api/burgers/" + id, {
+            type: "PUT",
+            data: userDevoured
+        }).then(
+            function () {
+                console.log("Burger Eaten");
+                location.reload();
+            }
+        );
+    });
+
+
 
 });
