@@ -11,7 +11,9 @@
     <input type="input" name="name" id="mondo"><br>
   </div>
 
-  <button type="submit">Add the burger</button>
+  <button type="submit">Add the burger
+  <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+  </button>
 </form>
   </div>
 </div>
@@ -23,8 +25,9 @@
   {{#each burgers}}
     {{#unless devoured}}
       <li>{{burger_name}}
-          <button class="devoured" data-devoured= "{{devoured}}" data-id= "{{id}}">
+          <button class="devoured" data-devoured= "{{devoured}}" data-id= "{{this.id}}">
               Devour Now!
+          <i class="fa fa-cutlery" aria-hidden="true"></i>
           </button>
       </li>
     {{/unless}}
@@ -40,7 +43,7 @@
   {{#each burgers}}
     {{#if devoured}}
       <li>{{burger_name}}
-          <button class="devoured" data-devoured="{{devoured}}" data-id=""{{id}}>
+          <button class="devoured" data-devoured="{{devoured}}" data-id="{{this.id}}">
               You have devoured this!
           </button>
       </li>
