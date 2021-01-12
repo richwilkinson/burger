@@ -25,7 +25,7 @@
   {{#each burgers}}
     {{#unless devoured}}
       <li>{{burger_name}}
-          <button class="devoured" data-devoured= "{{devoured}}" data-id= "{{this.id}}">
+          <button class="devour" data-devoured= "{{devoured}}" data-id= "{{this.id}}">
               Devour Now!
           <i class="fa fa-cutlery" aria-hidden="true"></i>
           </button>

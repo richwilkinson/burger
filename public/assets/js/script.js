@@ -25,11 +25,11 @@ $(document).ready(function () {
             }
         );
     });
-    $(".devoured").on("click", function (event) {
+    $(".devour").on("click", function (event) {
         var id = $(this).data("id");
         console.log(id);
         var userDevoured = {
-            devoured: 1
+            devoured: true
         };
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
@@ -41,7 +41,21 @@ $(document).ready(function () {
             }
         );
     });
-
-
+    $(".devoured").on("click", function (event) {
+        var id = $(this).data("id");
+        console.log(id);
+        /*var userDevoured = {
+            devoured: true
+        };*/
+        $.ajax("/api/burgers/" + id, {
+            type: "DELETE",
+            //data: userDevoured
+        }).then(
+            function () {
+                console.log("Burger Eaten");
+                location.reload();
+            }
+        );
+    });
 
 });
