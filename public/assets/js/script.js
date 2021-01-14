@@ -44,6 +44,8 @@ $(document).ready(function () {
     $(".devoured").on("click", function (event) {
         var id = $(this).data("id");
         console.log(id);
+        console.log("this")
+        console.log(this)
         /*var userDevoured = {
             devoured: true
         };*/
